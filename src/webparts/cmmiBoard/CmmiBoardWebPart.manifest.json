@@ -1,0 +1,36 @@
+{
+	"$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+	"id": "38561f91-df2b-46da-b35d-8fcb66b4fab2",
+	"alias": "CmmiBoardWebPart",
+	"componentType": "WebPart",
+	"version": "*",
+	"manifestVersion": 2,
+	"requiresCustomScript": false,
+	"supportedHosts": [
+		"SharePointFullPage"
+	],
+	"supportsThemeVariants": true,
+	"preconfiguredEntries": [
+		{
+			"groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",
+			"group": {
+				"default": "Advanced"
+			},
+			"title": {
+				"default": "CMMI Board"
+			},
+			"description": {
+				"default": "Initial scaffold for the CMMI board webpart"
+			},
+			"officeFabricIconFontName": "Page",
+			"properties": {
+				"description": "Configure all board texts and cards in the property pane.",
+				"title": "Desenvolvimento",
+				"transversalText": "Qualidade · Configuracao · Decisao · Causa Raiz",
+				"allowLinks": true,
+				"stageCardsJson": "[{\"title\":\"Requisitos\",\"line1\":\"Levantamento\",\"line2\":\"Entradas e backlog\",\"style\":\"gradient\",\"color\":\"blue\"},{\"title\":\"Arquitetura\",\"line1\":\"Solucao\",\"line2\":\"Padroes e design\",\"style\":\"gradient\",\"color\":\"blue\"},{\"title\":\"Ambientes\",\"line1\":\"Preparacao\",\"line2\":\"Infra e esteira\",\"style\":\"solid\",\"color\":\"green\"},{\"title\":\"Sprints Ageis\",\"line1\":\"Sprint 01\",\"line2\":\"Sprint 02\",\"line3\":\"Sprint N\",\"mode\":\"pill\",\"style\":\"solid\",\"color\":\"indigo\"},{\"title\":\"CI/CD\",\"line1\":\"Integracao\",\"line2\":\"Build e deploy\",\"style\":\"gradient\",\"color\":\"blue\"},{\"title\":\"Testes\",\"line1\":\"Validacao\",\"line2\":\"Verificacao e evidencia\",\"style\":\"solid\",\"color\":\"cyan\"}]",
+				"premiumCardsJson": "[{\"icon\":\"Q\",\"title\":\"Qualidade\",\"hint\":\"PPQA · Auditoria e conformidade\",\"bullets\":[\"Aderencia ao processo\",\"Evidencias e auditorias\",\"Relatorios de conformidade\"],\"style\":\"gradient\",\"color\":\"blue\"},{\"icon\":\"C\",\"title\":\"Configuracao\",\"hint\":\"CM · Controle de versoes e baseline\",\"bullets\":[\"Versionamento de artefatos\",\"Baselines e rastreabilidade\",\"Aprovacao de mudancas\"],\"style\":\"gradient\",\"color\":\"purple\"},{\"icon\":\"D\",\"title\":\"Decisao\",\"hint\":\"DAR · Escolha estruturada\",\"bullets\":[\"Criterios e pesos claros\",\"Comparacao de alternativas\",\"Registro do racional tecnico\"],\"style\":\"gradient\",\"color\":\"amber\"},{\"icon\":\"R\",\"title\":\"Causa Raiz\",\"hint\":\"CAR · Prevencao de recorrencia\",\"bullets\":[\"Investigacao de falhas\",\"Identificacao da origem real\",\"Plano de acao preventivo\"],\"style\":\"gradient\",\"color\":\"red\"}]"
+			}
+		}
+	]
+}

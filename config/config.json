@@ -1,0 +1,18 @@
+{
+	"$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+	"version": "2.0",
+	"bundles": {
+		"cmmi-board-web-part": {
+			"components": [
+				{
+					"entrypoint": "./lib/webparts/cmmiBoard/CmmiBoardWebPart.js",
+					"manifest": "./src/webparts/cmmiBoard/CmmiBoardWebPart.manifest.json"
+				}
+			]
+		}
+	},
+	"externals": {},
+	"localizedResources": {
+		"CmmiBoardWebPartStrings": "lib/webparts/cmmiBoard/loc/{locale}.js"
+	}
+}

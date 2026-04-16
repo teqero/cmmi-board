@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "cmmi-board-client-side-solution",
+    "id": "4a4430a0-cd24-4db0-a725-db0431e80538",
+    "version": "1.0.0.6",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "CMMI landing page webpart"
+      },
+      "longDescription": {
+        "default": "CMMI landing page webpart"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "cmmi-board Feature",
+        "description": "The feature that activates elements of the cmmi-board solution.",
+        "id": "7288adcb-e3a8-4f1d-b7bf-a7465deec8a4",
+        "version": "1.0.0.4"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/cmmi-board.sppkg"
+  }
+}

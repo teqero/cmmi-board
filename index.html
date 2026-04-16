@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMI Board - Capability Maturity Model Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            padding: 25px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.3em;
+            position: relative;
+        }
+
+        .card-level-1 .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-level-2 .card-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .card-level-3 .card-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .card-level-4 .card-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .card-level-5 .card-header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .level-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .links-section {
+            margin-top: 20px;
+        }
+
+        .links-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .link-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .link-item a {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .link-item a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .link-item a::before {
+            content: '→';
+            margin-right: 8px;
+            font-weight: 600;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .board {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card-header {
+                padding: 20px;
+                font-size: 1.1em;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ CMMI Board</h1>
+        
+        <div class="board">
+            <!-- Level 1: Initial -->
+            <div class="card card-level-1">
+                <div class="card-header">
+                    Level 1: Initial
+                    <span class="level-badge">Level 1</span>
+                </div>
+                <div class="card-body">
+                    <div class="premium-badge">Initial</div>
+                    <p class="description">
+                        Processes are unpredictable, poorly controlled, and reactive. Success depends on individual efforts.
+                    </p>
+                    <div class="links-section">
+                        <div class="links-title">Resources</div>
+                        <ul class="link-list" data-level="1">
+                            <li class="link-item"><a href="https://cmmi.example.com/docs" target="_blank">Process Documentation</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/cases" target="_blank">Case Studies</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/guides" target="_blank">Guidelines</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 2: Managed -->
+            <div class="card card-level-2">
+                <div class="card-header">
+                    Level 2: Managed
+                    <span class="level-badge">Level 2</span>
+                </div>
+                <div class="card-body">
+                    <div class="premium-badge">Managed</div>
+                    <p class="description">
+                        Requirements are managed, and processes are planned, executed, measured, and controlled.
+                    </p>
+                    <div class="links-section">
+                        <div class="links-title">Resources</div>
+                        <ul class="link-list" data-level="2">
+                            <li class="link-item"><a href="https://cmmi.example.com/practices" target="_blank">Best Practices</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/templates" target="_blank">Process Templates</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/metrics" target="_blank">Key Metrics</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 3: Defined -->
+            <div class="card card-level-3">
+                <div class="card-header">
+                    Level 3: Defined
+                    <span class="level-badge">Level 3</span>
+                </div>
+                <div class="card-body">
+                    <div class="premium-badge">Defined</div>
+                    <p class="description">
+                        Processes are documented, standardized, and tailored from organizational standards.
+                    </p>
+                    <div class="links-section">
+                        <div class="links-title">Resources</div>
+                        <ul class="link-list" data-level="3">
+                            <li class="link-item"><a href="https://cmmi.example.com/definitions" target="_blank">Process Definitions</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/training" target="_blank">Training Materials</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/compliance" target="_blank">Compliance Guides</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 4: Quantitatively Managed -->
+            <div class="card card-level-4">
+                <div class="card-header">
+                    Level 4: Quantitatively Managed
+                    <span class="level-badge">Level 4</span>
+                </div>
+                <div class="card-body">
+                    <div class="premium-badge">Quantified</div>
+                    <p class="description">
+                        Processes are measured and controlled. Quantitative objectives for quality and performance exist.
+                    </p>
+                    <div class="links-section">
+                        <div class="links-title">Resources</div>
+                        <ul class="link-list" data-level="4">
+                            <li class="link-item"><a href="https://cmmi.example.com/analytics" target="_blank">Analytics Dashboard</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/measurements" target="_blank">Measurement Data</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/benchmarks" target="_blank">Performance Benchmarks</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 5: Optimizing -->
+            <div class="card card-level-5">
+                <div class="card-header">
+                    Level 5: Optimizing
+                    <span class="level-badge">Level 5</span>
+                </div>
+                <div class="card-body">
+                    <div class="premium-badge">Optimizing</div>
+                    <p class="description">
+                        Focus on continuous improvement. Processes are optimized and refined through innovation.
+                    </p>
+                    <div class="links-section">
+                        <div class="links-title">Resources</div>
+                        <ul class="link-list" data-level="5">
+                            <li class="link-item"><a href="https://cmmi.example.com/innovation" target="_blank">Innovation Initiatives</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/optimization" target="_blank">Optimization Strategies</a></li>
+                            <li class="link-item"><a href="https://cmmi.example.com/research" target="_blank">R&D Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>CMMI Board Dashboard • Responsive Design • Premium Cards with Configurable Links</p>
+            <button id="config-btn" style="
+                margin-top: 15px;
+                padding: 10px 20px;
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.9em;
+                transition: all 0.3s;
+            " onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'">⚙️ Configure Links</button>
+        </div>
+    </div>
+
+    <!-- Configuration Modal -->
+    <div id="config-modal" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        overflow-y: auto;
+    ">
+        <div style="
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        ">
+            <h2 style="margin-bottom: 20px; color: #333;">Configure CMMI Level Links</h2>
+            <div id="config-form"></div>
+            <div style="margin-top: 30px; display: flex; gap: 10px;">
+                <button onclick="saveConfig()" style="
+                    flex: 1;
+                    padding: 12px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: 600;
+                ">Save Changes</button>
+                <button onclick="closeConfig()" style="
+                    flex: 1;
+                    padding: 12px;
+                    background: #ddd;
+                    color: #333;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: 600;
+                ">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Default links configuration
+        const defaultConfig = {
+            1: [
+                { label: 'Process Documentation', url: 'https://cmmi.example.com/docs' },
+                { label: 'Case Studies', url: 'https://cmmi.example.com/cases' },
+                { label: 'Guidelines', url: 'https://cmmi.example.com/guides' }
+            ],
+            2: [
+                { label: 'Best Practices', url: 'https://cmmi.example.com/practices' },
+                { label: 'Process Templates', url: 'https://cmmi.example.com/templates' },
+                { label: 'Key Metrics', url: 'https://cmmi.example.com/metrics' }
+            ],
+            3: [
+                { label: 'Process Definitions', url: 'https://cmmi.example.com/definitions' },
+                { label: 'Training Materials', url: 'https://cmmi.example.com/training' },
+                { label: 'Compliance Guides', url: 'https://cmmi.example.com/compliance' }
+            ],
+            4: [
+                { label: 'Analytics Dashboard', url: 'https://cmmi.example.com/analytics' },
+                { label: 'Measurement Data', url: 'https://cmmi.example.com/measurements' },
+                { label: 'Performance Benchmarks', url: 'https://cmmi.example.com/benchmarks' }
+            ],
+            5: [
+                { label: 'Innovation Initiatives', url: 'https://cmmi.example.com/innovation' },
+                { label: 'Optimization Strategies', url: 'https://cmmi.example.com/optimization' },
+                { label: 'R&D Projects', url: 'https://cmmi.example.com/research' }
+            ]
+        };
+
+        let config = JSON.parse(localStorage.getItem('cmmiConfig')) || defaultConfig;
+
+        // Initialize UI
+        function initConfig() {
+            const form = document.getElementById('config-form');
+            form.innerHTML = '';
+            
+            for (let level = 1; level <= 5; level++) {
+                const levelDiv = document.createElement('div');
+                levelDiv.style.marginBottom = '25px';
+                levelDiv.style.paddingBottom = '25px';
+                levelDiv.style.borderBottom = '1px solid #ddd';
+                
+                const title = document.createElement('h3');
+                title.textContent = `Level ${level}`;
+                title.style.color = '#333';
+                title.style.marginBottom = '12px';
+                levelDiv.appendChild(title);
+                
+                config[level].forEach((link, idx) => {
+                    const linkDiv = document.createElement('div');
+                    linkDiv.style.marginBottom = '12px';
+                    linkDiv.style.display = 'grid';
+                    linkDiv.style.gridTemplateColumns = '1fr 2fr';
+                    linkDiv.style.gap = '10px';
+                    
+                    const labelInput = document.createElement('input');
+                    labelInput.type = 'text';
+                    labelInput.value = link.label;
+                    labelInput.placeholder = 'Link label';
+                    labelInput.style.padding = '8px';
+                    labelInput.style.border = '1px solid #ddd';
+                    labelInput.style.borderRadius = '5px';
+                    labelInput.dataset.level = level;
+                    labelInput.dataset.index = idx;
+                    labelInput.dataset.type = 'label';
+                    
+                    const urlInput = document.createElement('input');
+                    urlInput.type = 'text';
+                    urlInput.value = link.url;
+                    urlInput.placeholder = 'URL';
+                    urlInput.style.padding = '8px';
+                    urlInput.style.border = '1px solid #ddd';
+                    urlInput.style.borderRadius = '5px';
+                    urlInput.dataset.level = level;
+                    urlInput.dataset.index = idx;
+                    urlInput.dataset.type = 'url';
+                    
+                    linkDiv.appendChild(labelInput);
+                    linkDiv.appendChild(urlInput);
+                    levelDiv.appendChild(linkDiv);
+                });
+                
+                form.appendChild(levelDiv);
+            }
+        }
+
+        function saveConfig() {
+            const inputs = document.querySelectorAll('#config-form input');
+            const newConfig = JSON.parse(JSON.stringify(defaultConfig));
+            
+            inputs.forEach(input => {
+                const level = input.dataset.level;
+                const index = input.dataset.index;
+                const type = input.dataset.type;
+                
+                if (type === 'label') {
+                    newConfig[level][index].label = input.value;
+                } else {
+                    newConfig[level][index].url = input.value;
+                }
+            });
+            
+            config = newConfig;
+            localStorage.setItem('cmmiConfig', JSON.stringify(config));
+            updateLinks();
+            closeConfig();
+            alert('Configuration saved successfully!');
+        }
+
+        function closeConfig() {
+            document.getElementById('config-modal').style.display = 'none';
+        }
+
+        function openConfig() {
+            initConfig();
+            document.getElementById('config-modal').style.display = 'block';
+        }
+
+        function updateLinks() {
+            for (let level = 1; level <= 5; level++) {
+                const linkList = document.querySelector(`ul[data-level="${level}"]`);
+                if (!linkList) continue;
+                
+                linkList.innerHTML = '';
+                config[level].forEach(link => {
+                    const li = document.createElement('li');
+                    li.className = 'link-item';
+                    li.innerHTML = `<a href="${link.url}" target="_blank">${link.label}</a>`;
+                    linkList.appendChild(li);
+                });
+            }
+        }
+
+        // Event listeners
+        document.getElementById('config-btn').addEventListener('click', openConfig);
+        
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('config-modal');
+            if (event.target === modal) {
+                closeConfig();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', updateLinks);
+    </script>
+</body>
+</html>

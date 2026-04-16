@@ -1,0 +1,71 @@
+.cardEditorContainer {
+	background: #ffffff;
+	border: 1px solid #e1dfdd;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	padding: 16px;
+}
+
+.cardHeader {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 16px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #e1dfdd;
+}
+
+.cardIcon {
+	background: #0078d4;
+	color: #ffffff;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 18px;
+	flex-shrink: 0;
+}
+
+.cardInfo {
+	flex: 1;
+}
+
+.cardInfo h4 {
+	margin: 0 0 4px 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333333;
+}
+
+.cardInfo p {
+	margin: 0;
+	font-size: 13px;
+	color: #666666;
+}
+
+.bulletsSection {
+	margin-top: 12px;
+}
+
+.cardLinkSection {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	display: grid;
+	gap: 8px;
+	margin-bottom: 12px;
+	padding: 10px;
+}
+
+.bulletsSection h5 {
+	margin: 0 0 12px 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333333;
+}
+
+.addButton {
+	margin-top: 8px;
+}

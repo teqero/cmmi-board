@@ -1,0 +1,38 @@
+.bulletEditorContainer {
+	background: #f3f2f1;
+	border: 1px solid #c8c6c4;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	padding: 12px;
+}
+
+.bulletRow {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.textField {
+	width: 100%;
+}
+
+.urlField {
+	width: 100%;
+}
+
+.bulletControls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 4px;
+}
+
+.toggleContainer {
+	flex: 1;
+}
+
+.deleteButton {
+	color: #c50f1f;
+	padding: 4px;
+	height: 32px;
+}
